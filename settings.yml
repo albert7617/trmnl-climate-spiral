@@ -1,0 +1,66 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 3.4.0
+serverless_language: python
+refresh_interval_floor: '1440'
+polling_url: ''
+polling_headers: ''
+polling_body: ''
+id: 500495
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: author_bio
+  field_type: author_bio
+  name: About This Plugin
+  description: |
+    The visualization presents monthly global temperature anomalies. This visualization is updated roughly two weeks after the end of each month. <br>
+    Temperature anomalies are deviations from a long term global average. In this case the period 1951-1980 is used to define the baseline for the anomaly. These temperatures are based on the GISS Surface Temperature Analysis (GISTEMP v4), an estimate of global surface temperature change. The data file used to create this visualization is publicly accessible here.<br>(Contact @albert7617 on TRMNL Discord if experiencing issue)
+  help_text: <p>The term <a href="https://www.climate-lab-book.ac.uk/spirals/">'climate spiral'</a> describes an animated radial plot of global temperatures. Climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading popularized this style of visualization in 2016.<br><br>The Goddard Institute for Space Studies (GISS) in New York is a NASA laboratory managed by the Earth Sciences Division of the agency’s Goddard Space Flight Center in Greenbelt, Maryland. The laboratory is affiliated with Columbia University’s Earth Institute and School of Engineering and Applied Science in New York.</p>
+  category: environment,education
+  learn_more_url: https://svs.gsfc.nasa.gov/5190/
+- keyname: degree_unit
+  field_type: select
+  name: Temperature Unit
+  description: Celsius or Fahrenheit?
+  default: celsius
+  options:
+  - Celsius: celsius
+  - Fahrenheit: fahrenheit
+- keyname: start_year
+  field_type: number
+  name: Start Year
+  default: '1880'
+  min: 1880
+  step: 1
+- keyname: line_count
+  field_type: number
+  name: Line count
+  default: '20'
+  min: 1
+  step: 1
+name: Climate Spiral
+description: Global temperature spiral
+refresh_interval: 1440
