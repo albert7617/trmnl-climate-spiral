@@ -17,7 +17,7 @@
 <div class="title_bar">
   <img class="image" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyBmaWxsPSIjMDAwMDAwIiB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAzNiAzNiIgdmVyc2lvbj0iMS4xIiAgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8cGF0aCBjbGFzcz0iY2xyLWktb3V0bGluZSBjbHItaS1vdXRsaW5lLXBhdGgtMSIgZD0iTTE5LDIzLjE3VjExLjQ2SDE3VjIzLjJhMywzLDAsMSwwLDIsMFoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xyLWktb3V0bGluZSBjbHItaS1vdXRsaW5lLXBhdGgtMiIgZD0iTTI2LDE1YTEsMSwwLDAsMCwwLTJIMjMuOTJWMTFIMjZhMSwxLDAsMCwwLDAtMkgyMy45MlY4YTYsNiwwLDAsMC0xMiwwVjIwLjgxYTgsOCwwLDEsMCwxMi0uMlYxOUgyNmExLDEsMCwwLDAsMC0ySDIzLjkyVjE1Wk0yNCwyNmE2LDYsMCwxLDEtMTAuMzYtNC4xMmwuMjctLjI5VjhhNCw0LDAsMCwxLDgsMFYyMS40NGwuMy4yOUE2LDYsMCwwLDEsMjQsMjZaIj48L3BhdGg+CiAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIGZpbGwtb3BhY2l0eT0iMCIvPgo8L3N2Zz4=">
   <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
-  <span class="instance">{{ cfv.start_year }}-{{ 'now' | date: '%Y' }}</span>
+  <span class="instance" id="year-range">{{ cfv.start_year }}-{{ 'now' | date: '%Y' }}</span>
 </div>
 
 <script type="text/javascript"> 
@@ -42,6 +42,7 @@
   const isHalfVertical = document.querySelector('.view--half_vertical') !== null;
   const isHalfHorizontal = document.querySelector('.view--half_horizontal') !== null;
   const isQuadrant = document.querySelector('.view--quadrant') !== null;
+  const domYearRange = document.getElementById('year-range');
 
   console.log(`isPortrait: ${isPortrait}, isFull: ${isFull}, isHalfVertical: ${isHalfVertical}, isHalfHorizontal: ${isHalfHorizontal}, isQuadrant: ${isQuadrant}`);
 
@@ -82,6 +83,7 @@
     legendLayout = "horizontal";
     legendVerticalAlign = "bottom";
     if (isPortrait) {
+      domYearRange.hidden = true;
       chartInverted = true;
       isPolar = false;
       yAxisMin += 1;
@@ -95,6 +97,7 @@
     lineWidthCurr = 4;
     xAxisOffset = 15;
     if (isPortrait) {
+      domYearRange.hidden = true;
       legendLayout = "horizontal";
       legendAlign = "center";
       legendVerticalAlign = "bottom";

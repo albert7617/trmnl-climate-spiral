@@ -41,6 +41,7 @@ custom_fields:
   help_text: <p>The term <a href="https://www.climate-lab-book.ac.uk/spirals/">'climate spiral'</a> describes an animated radial plot of global temperatures. Climate scientist Ed Hawkins from the National Centre for Atmospheric Science, University of Reading popularized this style of visualization in 2016.<br><br>The Goddard Institute for Space Studies (GISS) in New York is a NASA laboratory managed by the Earth Sciences Division of the agency’s Goddard Space Flight Center in Greenbelt, Maryland. The laboratory is affiliated with Columbia University’s Earth Institute and School of Engineering and Applied Science in New York.</p>
   category: environment,education
   learn_more_url: https://svs.gsfc.nasa.gov/5190/
+  github_url: https://github.com/albert7617/trmnl-climate-spiral
 - keyname: degree_unit
   field_type: select
   name: Temperature Unit
