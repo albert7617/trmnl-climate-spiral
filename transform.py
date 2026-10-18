@@ -12,7 +12,8 @@ def parse_val(v):
 
 def run(input):
   timestamp = datetime.now(timezone.utc).isoformat()
-  url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+  # url = "https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv"
+  url = "https://raw.githubusercontent.com/albert7617/trmnl-climate-spiral/refs/heads/master/GLB.Ts%2BdSST.csv"
   headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0"}
 
   try:
