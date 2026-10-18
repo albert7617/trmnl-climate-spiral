@@ -8,13 +8,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - run: pip install requests
       - run: python update_climate.py
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Set commit date
+        run: echo "COMMIT_DATE=$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Update API data ($(date -u +'%Y-%m-%d'))"
+          commit_message: "Update API data ${{ env.COMMIT_DATE }}"
           file_pattern: "GLB.Ts+dSST.csv"
